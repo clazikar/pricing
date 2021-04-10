@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+  --Light-Grayish-Blue: hsl(234, 14%, 74%);
+  --Grayish-Blue: hsl(233, 13%, 49%);
+  --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+  --Linear-Gradient: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+/*Typography*/
+h1,
+.toggleText {
+  color: var(--Grayish-Blue);
+}
+
+body {
+  background-color: var(--Very-Light-Grayish-Blue);
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+}
+.basicPrice,
+h3 {
+  display: none;
+}
+
+h4,
+.price,
+.price h2,
+.box p,
+.box button {
+  pointer-events: none;
+}
+
+/*Body*/
+
+body::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(images/bg-top.svg);
+  top: -3em;
+  left: 7em;
+  z-index: -1;
+  background-size: 18em;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+/*Main Section*/
+
+.container {
+  width: min(80%, 960px);
+  margin: 2em auto auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Input*/
+
+.toggleDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+  width: 75%;
+  font-size: 0.8rem;
+}
+
+.toggle {
+  margin: 0px 20px;
+}
+
+input[type="checkbox"] {
+  width: 40px;
+  height: 20px;
+  background: var(--Linear-Gradient);
+  appearance: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  outline: none;
+  border: none;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  border-radius: 10px;
+  transform: scale(0.7);
+  transition: 0.3s;
+}
+
+input:checked[type="checkbox"]::before {
+  left: 20px;
+}
+
+/*Box Container*/
+
+.box-container {
+  margin-top: 2em;
+  width: 100%;
+}
+
+/*General Box*/
+
+.box {
+  margin-bottom: 1em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: -1px 2px 12px -5px rgba(13, 13, 13, 0.75);
+  -webkit-box-shadow: -1px 2px 12px -5px rgba(13, 13, 13, 0.75);
+  -moz-box-shadow: -1px 2px 12px -5px rgba(13, 13, 13, 0.75);
+}
+
+.box:hover {
+  transform: scale(1.06);
+  margin: 2em 0em;
+}
+
+.box:active {
+  transform: scale(0.9);
+}
+
+/*Box 1 and 3*/
+
+.box1,
+.box3 {
+  background-color: white;
+  color: var(--Grayish-Blue);
+}
+
+.price {
+  font-size: 2rem;
+}
+
+.boxTitle {
+  margin: 1em 0em;
+}
+
+.price {
+  margin-bottom: 1em;
+  color: var(--Dark-Grayish-Blue);
+}
+
+.boxText {
+  width: 80%;
+  padding: 0.8em;
+  border-bottom: 1px solid var(--Light-Grayish-Blue);
+  text-align: center;
+}
+
+.boxText1 {
+  border-top: 1px solid var(--Light-Grayish-Blue);
+}
+
+/*Box 2*/
+.box2 {
+  background: var(--Linear-Gradient);
+}
+
+.box2 .boxText,
+.box2 .boxTitle {
+  color: white;
+}
+
+.box2 button {
+  background: white;
+  color: hsl(237, 63%, 64%);
+}
+
+.box2 .price {
+  color: white;
+}
+
+/*Button*/
+
+button {
+  width: 80%;
+  margin: 1em 0 2em 0;
+  padding: 0.6em;
+  cursor: pointer;
+  background: var(--Linear-Gradient);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: white;
+  font-family: inherit;
+  transition: 0.3s;
+}
+
+button:active {
+  transform: scaleX(1.1);
+}
+
+/*Media Query*/
+
+@media (min-width: 768px) {
+  .box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+  }
+  h1 {
+    margin-top: 2em;
+  }
+  .box:hover {
+    transform: scaleY(1.1);
+    margin: 0em;
+  }
+
+  body::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(images/bg-top.svg);
+    top: -4em;
+    left: 0em;
+    z-index: -1;
+    background-size: 22em;
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(images/bg-bottom.svg);
+    top: 0em;
+    left: 0em;
+    z-index: -1;
+    background-size: 22em;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+  }
+
+  .toggleDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  .toggle {
+    margin: 0px 20px;
+  }
+
+  .box:active {
+    transform: scale(0.9);
+  }
+}
+
+/*JJavascript classes*/
+.displayToggle {
+  display: none;
+}
+
+.undisplayToggle {
+  display: block;
+}
+
+.colorChange {
+  background: var(--Linear-Gradient);
+}
+
+.colorRemove {
+  background: white;
+}
+
+.colorTwo {
+  color: white;
+}
+
+.colorPrice {
+  color: var(--Dark-Grayish-Blue);
+}
+
+.colorButton {
+  background: white;
+  color: hsl(237, 63%, 64%);
+}
+
+.heightChange {
+  transform: scaleY(1.1);
+}
